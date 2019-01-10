@@ -182,7 +182,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	Diff.prototype = {
 	  /*istanbul ignore start*/ /*istanbul ignore end*/diff: function diff(oldString, newString) {
-	    /*istanbul ignore start*/var /*istanbul ignore end*/options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      /*istanbul ignore start*/var /*istanbul ignore end*/options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+      let fixLength = 2000
 
 	    var callback = options.callback;
 	    if (typeof options === 'function') {
@@ -205,8 +206,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 
 	    // Allow subclasses to massage the input prior to running
-	    oldString = this.castInput(oldString);
-	    newString = this.castInput(newString);
+	    oldString = this.castInput(oldString.substring(0,fixLength));
+	    newString = this.castInput(newString.substring(0,fixLength));
 
 	    oldString = this.removeEmpty(this.tokenize(oldString));
 	    newString = this.removeEmpty(this.tokenize(newString));

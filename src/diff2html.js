@@ -18,8 +18,8 @@
     outputFormat: 'line-by-line',
     matching: 'none',
     matchWordsThreshold: 0.25,
-    matchingMaxComparisons: 2500,
-    maxLineLengthHighlight: 10000
+    matchingMaxComparisons: 500,
+    maxLineLengthHighlight: 500
   };
 
   /*
